@@ -28,7 +28,9 @@ const Maincondition=()=>{
             <div style={{backgroundColor:'white',padding:'50px',margin:'75px',borderRadius:'10px'}}>
 
 
-                <RenderProject/>
+                {
+                    selectedProject && <RenderProject project={selectedProject}/>
+                }
 
             </div>
         </>

@@ -60,7 +60,7 @@ const DetailsOfProjects=(props)=>{
                 <h3>Key Concepts:</h3>
                 {
                     props.project.concepts.map((prop)=>(
-                        <button style={getpropStyle()}>{prop}</button>
+                        <button key={prop} style={getpropStyle()}>{prop}</button>
                     ))
                 }
             </div>

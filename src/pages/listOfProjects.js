@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ListOfProjects=({onSelect})=>{
     
@@ -93,13 +93,17 @@ const ListOfProjects=({onSelect})=>{
     setHover(project);
   }
 
+  useEffect(()=>{
+    onSelect(hover);
+  })
+
     return (
         <div style={{textAlign:'left'}}>
         <h3>Projects</h3>
-        <div style={{}}>
+        <div>
             {
                 projects.map((item )=>(
-                    <button  style={getCardStyle(item.id)} onClick={()=>setProjectInParent(item)}>
+                    <button key={item.id} style={getCardStyle(item.id)} onClick={()=>setProjectInParent(item)}>
                         <p  style={{fontWeight:'bold',fontSize:'larger'}}>{item.title}</p>
                         {item.difficulty}
                     </button>
